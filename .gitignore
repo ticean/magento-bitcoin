@@ -1,3 +1,5 @@
+.htaccess
+get.php
 app/code/community/Phoenix/
 app/code/core/
 app/design/adminhtml/default/default/
