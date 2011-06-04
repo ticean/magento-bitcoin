@@ -1,5 +1,6 @@
 .htaccess
 get.php
+app/code/community/Find/Feed/
 app/code/community/Phoenix/
 app/code/core/
 app/design/adminhtml/default/default/
@@ -19,8 +20,15 @@ app/etc/modules/Mage_Weee.xml
 app/etc/modules/Mage_Widget.xml
 app/etc/modules/Phoenix_Moneybookers.xml
 app/etc/config.xml
+app/etc/local.xml
 app/etc/local.xml.additional
 app/etc/local.xml.template
+app/etc/modules/Find_Feed.xml
+app/etc/modules/Mage_Authorizenet.xml
+app/etc/modules/Mage_Connect.xml
+app/etc/modules/Mage_ImportExport.xml
+app/etc/modules/Mage_PageCache.xml
+app/etc/modules/Mage_XmlConnect.xml
 app/locale/en_US/
 app/Mage.php
 cron.php
@@ -41,6 +49,7 @@ js/varien/
 js/calendar/
 js/flash/
 js/index.php
+js/jscolor/
 js/mage/
 js/scriptaculous/
 js/tiny_mce/
@@ -48,12 +57,16 @@ lib/3Dsecure/
 lib/flex/
 lib/googlecheckout/
 lib/LinLibertineFont/
+lib/Mage/
 lib/PEAR/
+lib/phpseclib/
 lib/Varien/
 lib/Zend/
 LICENSE_AFL.txt
 LICENSE.html
 LICENSE.txt
+mage
+media/*
 media/downloadable/
 media/import/
 nbproject/
@@ -61,6 +74,7 @@ pear/
 php.ini.sample
 pkginfo/
 shell/abstract.php
+shell/cache.php
 shell/compiler.php
 shell/indexer.php
 shell/log.php
