@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <ScaleWorks_Bitcoin>
+            <active>true</active>
+            <codePool>community</codePool>
+        </ScaleWorks_Bitcoin>
+    </modules>
+</config>
