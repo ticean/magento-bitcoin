@@ -48,33 +48,25 @@
                 </setup>
             </bitcoin_setup>
         </resources>
-        <payment>
-            <bitcoin></bitcoin>
-            <groups>
-                <offline>Offline Payment Methods</offline>
-            </groups>
-        </payment>
-
     </global>
 
     <adminhtml>
-        <!--
-        <translate>
-            <modules>
-                <ScaleWorks_Bitcoin>
-                    <files>
-                        <default>ScaleWorks_Bitcoin.csv</default>
-                    </files>
-                </ScaleWorks_Bitcoin>
-            </modules>
-        </translate>
         <layout>
             <updates>
                 <bitcoin>
-                    <file>bitcoin.xml</file>
+                    <file>scaleworks/bitcoin.xml</file>
                 </bitcoin>
             </updates>
         </layout>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <ScaleWorks_Bitcoin before="Mage_Adminhtml">ScaleWorks_Bitcoin_Adminhtml</ScaleWorks_Bitcoin>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
         <events>
             <checkout_submit_all_after>
                 <observers>
@@ -85,6 +77,16 @@
                 </observers>
             </checkout_submit_all_after>
         </events>
+        <!--
+        <translate>
+            <modules>
+                <ScaleWorks_Bitcoin>
+                    <files>
+                        <default>ScaleWorks_Bitcoin.csv</default>
+                    </files>
+                </ScaleWorks_Bitcoin>
+            </modules>
+        </translate>
         -->
     </adminhtml>
 
@@ -136,7 +138,6 @@
         -->
     </frontend>
 
-    <!--
     <admin>
         <routers>
             <adminhtml>
@@ -148,7 +149,7 @@
             </adminhtml>
         </routers>
     </admin>
-    -->
+
     <default>
         <payment>
             <bitcoin>
@@ -169,4 +170,15 @@
             </bitcoin>
         </payment>
     </default>
+
+    <!--
+    <crontab>
+        <jobs>
+            <bitcoin_fetch_confirmations>
+                <run><model>bitcoin/observer::fetchConfirmations</model></run>
+            </bitcoin_fetch_confirmations>
+        </jobs>
+    </crontab>
+    -->
+    
 </config>
