@@ -40,6 +40,9 @@ class ScaleWorks_Bitcoin_Model_Payment_Method_Bitcoin extends Mage_Payment_Model
      * @var string
      */
     protected $_code = 'bitcoin';
+    protected $_formBlockType = 'bitcoin/payment_form_bitcoin';
+    protected $_infoBlockType = 'bitcoin/payment_info_bitcoin';
+
 
     /**
      * Check whether method is available
@@ -50,18 +53,5 @@ class ScaleWorks_Bitcoin_Model_Payment_Method_Bitcoin extends Mage_Payment_Model
     public function isAvailable($quote = null)
     {
         return true;
-    }
-
-    /**
-     * Get config peyment action
-     *
-     * @return string
-     */
-    public function getConfigPaymentAction()
-    {
-        if ('pending' == $this->getConfigData('order_status')) {
-            return Mage_Payment_Model_Method_Abstract::ACTION_AUTHORIZE;
-        }
-        return parent::getConfigPaymentAction();
     }
 }
