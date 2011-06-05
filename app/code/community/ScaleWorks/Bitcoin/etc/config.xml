@@ -143,7 +143,7 @@
             <adminhtml>
                 <args>
                     <modules>
-                        <ScaleWorks_Bitcoin before="ScaleWorks_Bitcoin">ScaleWorks_Bitcoin_Adminhtml</ScaleWorks_Bitcoin>
+                        <ScaleWorks_Bitcoin before="Mage_Adminhtml">ScaleWorks_Bitcoin_Adminhtml</ScaleWorks_Bitcoin>
                     </modules>
                 </args>
             </adminhtml>
@@ -154,19 +154,20 @@
         <payment>
             <bitcoin>
                 <active>1</active>
-                <bitcoind_url>https://secure.authorize.net/gateway/transact.dll</bitcoind_url>
-                <bitcoind_port></bitcoind_port>
+                <title>Bitcoin</title>
+                <model>bitcoin/payment_method_bitcoin</model>
+                <bitcoind_host>127.0.0.1</bitcoind_host>
+                <bitcoind_port>8332</bitcoind_port>
                 <bitcoind_username></bitcoind_username>
                 <bitcoind_password></bitcoind_password>
                 <address_label_prefix></address_label_prefix>
                 <debug>0</debug>
-                <model>bitcoin/payment_method_bitcoin</model>
-                <order_status>processing</order_status>
+                <order_status>pending</order_status>
                 <test>1</test>
-                <title>Bitcoin</title>
                 <trans_key backend_model="adminhtml/system_config_backend_encrypted"/>
                 <trans_md5 backend_model="adminhtml/system_config_backend_encrypted"/>
                 <create_order_before>1</create_order_before>
+                <group>offline</group>
             </bitcoin>
         </payment>
     </default>
