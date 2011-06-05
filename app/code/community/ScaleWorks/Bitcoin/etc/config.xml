@@ -41,6 +41,20 @@
         <helpers>
             <bitcoin><class>ScaleWorks_Bitcoin_Helper</class></bitcoin>
         </helpers>
+        <resources>
+            <bitcoin_setup>
+                <setup>
+                    <module>ScaleWorks_Bitcoin</module>
+                </setup>
+            </bitcoin_setup>
+        </resources>
+        <payment>
+            <bitcoin></bitcoin>
+            <groups>
+                <offline>Offline Payment Methods</offline>
+            </groups>
+        </payment>
+
     </global>
 
     <adminhtml>
@@ -73,33 +87,34 @@
         </events>
         -->
     </adminhtml>
-    <!--
+
     <frontend>
         <translate>
             <modules>
-                <Mage_Authorizenet>
+                <ScaleWorks_Bitcoin>
                     <files>
-                        <default>Mage_Authorizenet.csv</default>
+                        <default>ScaleWorks_Bitcoin.csv</default>
                     </files>
-                </Mage_Authorizenet>
+                </ScaleWorks_Bitcoin>
             </modules>
         </translate>
          <routers>
-            <authorizenet>
+            <bitcoin>
                 <use>standard</use>
                 <args>
                     <module>ScaleWorks_Bitcoin</module>
                     <frontName>bitcoin</frontName>
                 </args>
-            </authorizenet>
+            </bitcoin>
         </routers>
         <layout>
             <updates>
-                <authorizenet>
-                    <file>authorizenet.xml</file>
-                </authorizenet>
+                <bitcoin>
+                    <file>scaleworks/bitcoin.xml</file>
+                </bitcoin>
             </updates>
         </layout>
+        <!--
         <events>
             <checkout_submit_all_after>
                 <observers>
@@ -118,8 +133,9 @@
                 </observers>
             </controller_action_postdispatch_checkout_onepage_saveOrder>
         </events>
+        -->
     </frontend>
-    -->
+
     <!--
     <admin>
         <routers>
@@ -133,29 +149,24 @@
         </routers>
     </admin>
     -->
-    <!--
     <default>
         <payment>
             <bitcoin>
-                <active>0</active>
-                <cctypes>AE,VI,MC,DI</cctypes>
-                <cgi_url>https://secure.authorize.net/gateway/transact.dll</cgi_url>
+                <active>1</active>
+                <bitcoind_url>https://secure.authorize.net/gateway/transact.dll</bitcoind_url>
+                <bitcoind_port></bitcoind_port>
+                <bitcoind_username></bitcoind_username>
+                <bitcoind_password></bitcoind_password>
+                <address_label_prefix></address_label_prefix>
                 <debug>0</debug>
-                <email_customer>0</email_customer>
-                <login backend_model="adminhtml/system_config_backend_encrypted"/>
-                <merchant_email></merchant_email>
-                <model>authorizenet/directpost</model>
+                <model>bitcoin/payment_method_bitcoin</model>
                 <order_status>processing</order_status>
-                <payment_action>authorize</payment_action>
                 <test>1</test>
-                <title>Credit Card Direct Post (Authorize.net)</title>
+                <title>Bitcoin</title>
                 <trans_key backend_model="adminhtml/system_config_backend_encrypted"/>
                 <trans_md5 backend_model="adminhtml/system_config_backend_encrypted"/>
-                <allowspecific>0</allowspecific>
-                <currency>USD</currency>
                 <create_order_before>1</create_order_before>
             </bitcoin>
         </payment>
     </default>
-    -->
 </config>
