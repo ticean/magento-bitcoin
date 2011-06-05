@@ -4,6 +4,9 @@
         <ScaleWorks_Bitcoin>
             <active>true</active>
             <codePool>community</codePool>
+            <depends>
+                <Mage_Payment/>
+            </depends>
         </ScaleWorks_Bitcoin>
     </modules>
 </config>
