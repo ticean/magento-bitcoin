@@ -156,16 +156,14 @@
                 <active>1</active>
                 <title>Bitcoin</title>
                 <model>bitcoin/payment_method_bitcoin</model>
+                <bitcoind_https>1</bitcoind_https>
                 <bitcoind_host>127.0.0.1</bitcoind_host>
                 <bitcoind_port>8332</bitcoind_port>
                 <bitcoind_username></bitcoind_username>
                 <bitcoind_password></bitcoind_password>
-                <address_label_prefix></address_label_prefix>
+                <minimum_confirmations>6</minimum_confirmations>
                 <debug>0</debug>
                 <order_status>pending</order_status>
-                <test>1</test>
-                <trans_key backend_model="adminhtml/system_config_backend_encrypted"/>
-                <trans_md5 backend_model="adminhtml/system_config_backend_encrypted"/>
                 <create_order_before>1</create_order_before>
                 <group>offline</group>
             </bitcoin>
