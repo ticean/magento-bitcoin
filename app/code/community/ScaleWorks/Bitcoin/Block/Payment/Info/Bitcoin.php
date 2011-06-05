@@ -42,7 +42,7 @@ class ScaleWorks_Bitcoin_Payment_Info_Bitcoin extends Mage_Payment_Block_Info
      *
      * @return string
      */
-    public function getPayToAddress()
+    public function getBitcoinPaymentAddress()
     {
         return 'Booyah.';
     }
