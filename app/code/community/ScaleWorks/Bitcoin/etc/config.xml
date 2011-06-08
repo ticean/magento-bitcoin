@@ -48,6 +48,16 @@
                 </setup>
             </bitcoin_setup>
         </resources>
+        <currency>
+            <import>
+                <services>
+                    <bitcoincharts>
+                        <name>Bitcoincharts</name>
+                        <model>bitcoin/currency_import_bitcoincharts</model>
+                    </bitcoincharts>
+                </services>
+            </import>
+        </currency>
     </global>
 
     <adminhtml>
@@ -151,6 +161,17 @@
     </admin>
 
     <default>
+        <currency>
+            <bitcoincharts>
+                <timeout>100</timeout>
+            </bitcoincharts>
+            <import>
+                <enabled>0</enabled>
+                <error_email><![CDATA[]]></error_email>
+                <error_email_identity>general</error_email_identity>
+                <error_email_template>currency_import_error_email_template</error_email_template>
+            </import>
+        </currency>
         <payment>
             <bitcoin>
                 <active>1</active>
