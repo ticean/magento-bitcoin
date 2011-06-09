@@ -42,6 +42,20 @@ class ScaleWorks_Bitcoin_Model_Bitcoin extends Varien_Object
     }
 
     /**
+     * Returns the account associated with the given address.
+     *
+     * @param string $address
+     * @return string Account
+     * @throws ScaleWorks_Bitcoin_Exception
+     * @since 0.3.17
+     */
+    public function getAccount($address) {
+    if (!$address || empty($address))
+      throw Mage::exception('ScaleWorks_Bitcoin', 'Bitcount address was not provided.');
+    return $this->getClient()->getaccount($address);
+    }
+
+    /**
      * Returns a new bitcoin address for receiving payments.
      *
      * If $account is specified (recommended), it is added to the address book so
@@ -49,7 +63,7 @@ class ScaleWorks_Bitcoin_Model_Bitcoin extends Varien_Object
      *
      * @param string $account Label to apply to the new address
      * @return string Bitcoin address
-     * @throws BitcoinClientException
+     * @throws ScaleWorks_Bitcoin_Exception
      */
     public function getNewAddress($account = NULL) {
       if (!$account || empty($account)) {
@@ -58,5 +72,23 @@ class ScaleWorks_Bitcoin_Model_Bitcoin extends Varien_Object
       return $this->getClient()->getnewaddress($account);
     }
 
+
+    /**
+     * Returns the total amount received by $address in transactions with at least $minconf confirmations.
+     *
+     * @param string $address Bitcoin address
+     * @param integer $minconf Minimum number of confirmations for transactions to be counted
+     * @return float Total amount recieved by the Bitcoin address.
+     * @throws BitcoinClientException
+     */
+    public function getReceivedByAddress($address, $minconf = 5) {
+        if (!is_numeric($minconf) || $minconf < 0) {
+            Mage::exception('ScaleWorks_Bitcoin', 'Minimum confirmations param $minconf must be >= 0');
+        }
+        if (!$address || empty($address)) {
+            Mage::exception('ScaleWorks_Bitcoin', 'A bitcoin address must be provided.');
+        }
+        return $this->getClient()->getreceivedbyaddress($address, $minconf);
+    }
 
 }
