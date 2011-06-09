@@ -27,6 +27,7 @@
 /**
  * Currency rate import model (From www.bitcoincharts.com)
  * Provides for weighted prices, to minimize market fluctuations.
+ * Also, will default back to the default Webservicex for unsupported currencies.
  *
  * @category   ScaleWorks
  * @package    ScaleWorks_Bitcoin
@@ -65,8 +66,16 @@ class ScaleWorks_Bitcoin_Model_Currency_Import_Bitcoincharts extends Mage_Direct
     {
         $supported = $this->getSupportedCurrencies();
         if(!((in_array($currencyFrom, $supported) && $currencyTo == 'BIT') || ($currencyFrom == 'BIT' && in_array($currencyTo, $supported)))) {
-            $this->_messages[] = Mage::helper('bitcoin')->__('Conversion from %s to %s is not supported in Bitcoincharts.', $currencyFrom, $currencyTo);
-            return null;
+            //$this->_messages[] = Mage::helper('bitcoin')->__('Conversion from %s to %s is not supported in Bitcoincharts.', $currencyFrom, $currencyTo);
+            //return null;
+            try {
+                $default = Mage::getModel('directory/currency_import_webservicex');
+                return $default->convert($currencyFrom, $currencyTo);
+            }
+            catch (Exception $e) {
+                $this->_messages[] = $e->getMessage();
+            }
+
         }
 
         try {

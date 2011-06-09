@@ -37,6 +37,11 @@
         </blocks>
         <models>
             <bitcoin><class>ScaleWorks_Bitcoin_Model</class></bitcoin>
+            <directory>
+                <rewrite>
+                    <currency_import_webservicex>ScaleWorks_Bitcoin_Model_Currency_Import_Webservicex</currency_import_webservicex>
+                </rewrite>
+            </directory>
         </models>
         <helpers>
             <bitcoin><class>ScaleWorks_Bitcoin_Helper</class></bitcoin>
