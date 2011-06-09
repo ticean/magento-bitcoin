@@ -2790,11 +2790,6 @@
 				<displayName count="one">Burundian franc</displayName>
 				<displayName count="other">Burundian francs</displayName>
 			</currency>
-            <currency type="BIT">
-				<displayName>Bitcoin</displayName>
-				<displayName count="one">Bitcoin</displayName>
-				<displayName count="other">Bitcoins</displayName>
-			</currency>
 			<currency type="BMD">
 				<displayName>Bermudan Dollar</displayName>
 				<displayName count="one">Bermudan dollar</displayName>
@@ -2864,6 +2859,12 @@
 				<displayName>Bahamian Dollar</displayName>
 				<displayName count="one">Bahamian dollar</displayName>
 				<displayName count="other">Bahamian dollars</displayName>
+			</currency>
+            <currency type="BTC">
+				<displayName>Bitcoin</displayName>
+				<displayName count="one">Bitcoin</displayName>
+				<displayName count="other">Bitcoins</displayName>
+                <symbol>฿</symbol>
 			</currency>
 			<currency type="BTN">
 				<displayName>Bhutanese Ngultrum</displayName>

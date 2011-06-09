@@ -65,7 +65,7 @@ class ScaleWorks_Bitcoin_Model_Currency_Import_Bitcoincharts extends Mage_Direct
     protected function _convert($currencyFrom, $currencyTo, $retry=0)
     {
         $supported = $this->getSupportedCurrencies();
-        if(!((in_array($currencyFrom, $supported) && $currencyTo == 'BIT') || ($currencyFrom == 'BIT' && in_array($currencyTo, $supported)))) {
+        if(!((in_array($currencyFrom, $supported) && $currencyTo == 'BTC') || ($currencyFrom == 'BTC' && in_array($currencyTo, $supported)))) {
             //$this->_messages[] = Mage::helper('bitcoin')->__('Conversion from %s to %s is not supported in Bitcoincharts.', $currencyFrom, $currencyTo);
             //return null;
             try {
@@ -92,13 +92,13 @@ class ScaleWorks_Bitcoin_Model_Currency_Import_Bitcoincharts extends Mage_Direct
                 return null;
             }
 
-            $altCurrency = ($currencyFrom == "BIT")? $currencyTo:$currencyFrom;
+            $altCurrency = ($currencyFrom == "BTC")? $currencyTo:$currencyFrom;
 
             // 24h, 7d, 30d
             // assume 24h
             $rate = (array)$prices[$altCurrency];
             if(!$rate) return null;
-            if($currencyFrom == "BIT") {
+            if($currencyFrom == "BTC") {
                 $result = (float)$rate["24h"];
             } else {
                 $result = 1/(float)$rate["24h"];
