@@ -18,9 +18,9 @@
  * versions in the future. If you wish to customize Magento for your
  * needs please refer to http://www.magentocommerce.com for more information.
  *
- * @category    Mage
- * @package     Mage_Catalog
- * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
+ * @category    ScaleWorks
+ * @package     ScaleWorks_Bitcoin
+ * @copyright   Copyright (c) 2011 ScaleWorks. (http://www.scaleworks.co)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -35,6 +35,9 @@ class ScaleWorks_Bitcoin_IndexController extends Mage_Core_Controller_Front_Acti
         echo "<pre>\n";
         print_r($bitcoin->getInfo());
         echo "</pre>";
+
+        echo "Getting new address:<br/>";
+        echo $bitcoin->getNewAddress('customer1290');
     }
 
 }

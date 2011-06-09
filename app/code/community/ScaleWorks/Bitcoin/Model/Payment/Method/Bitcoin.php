@@ -42,6 +42,38 @@ class ScaleWorks_Bitcoin_Model_Payment_Method_Bitcoin extends Mage_Payment_Model
     protected $_code = 'bitcoin';
     protected $_formBlockType = 'bitcoin/payment_form_bitcoin';
     protected $_infoBlockType = 'bitcoin/payment_info_bitcoin';
+    protected $_bitcoin;
+
+    public function prepareSave() {
+        $paymentAddress = $this->getBitcoinInstance()->getNewAddress();
+        $this->setBitcoinPaymentAddress($paymentAddress);
+        $this->getInfoInstance()->setBitcoinPaymentAddress($paymentAddress);
+        return $this;
+    }
+
+    public function getBitcoinInstance() {
+        if(!$this->_bitcoin) {
+            $this->_bitcoin = Mage::getModel('bitcoin/bitcoin');
+        }
+        return $this->_bitcoin;
+    }
+
+    /**
+     * Assign data to info model instance
+     *
+     * @param   mixed $data
+     * @return  Mage_Payment_Model_Method_Purchaseorder
+     */
+    public function assignData($data)
+    {
+        if (!($data instanceof Varien_Object)) {
+            $data = new Varien_Object($data);
+        }
+
+        $this->getInfoInstance()->setBitcoinPaymentAddress($data->getBitcoinPaymentAddress());
+        return $this;
+    }
+
 
 
     /**
@@ -53,5 +85,16 @@ class ScaleWorks_Bitcoin_Model_Payment_Method_Bitcoin extends Mage_Payment_Model
     public function isAvailable($quote = null)
     {
         return true;
+    }
+
+    /**
+     * Check method for processing with base currency
+     *
+     * @param string $currencyCode
+     * @return boolean
+     */
+    public function canUseForCurrency($currencyCode)
+    {
+        return ($currencyCode == 'BIT')? true:false;
     }
 }

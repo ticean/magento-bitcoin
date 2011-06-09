@@ -25,7 +25,7 @@
  */
 
 
-class ScaleWorks_Bitcoin_Payment_Info_Bitcoin extends Mage_Payment_Block_Info
+class ScaleWorks_Bitcoin_Block_Payment_Info_Bitcoin extends Mage_Payment_Block_Info
 {
 
     protected $_payToAddress;
