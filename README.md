@@ -7,29 +7,26 @@ A Bitcoin payment module for Magento.
 Features
 ---------------------------
 
+- New bitcoin currency and symbol. Full currency support in Magento.
 - Accept bitcoin payment.
 - Fully configurable bitcoind parameters.
-- Http/Https access to bitcoin.
+- Http/Https access to bitcoin (if bitcoind configured for https).
 - Generate a new bitcoin address for every order.
-- Configure total payment confirmations to consider payment complete.
+- Provide bitcoin payment address to the customer on checkout.
 - Currency conversion from USD to Bitcoin.
 
 Planned Features
 ---------------------------
 
-- Accept Bitcoin as a payment method.
-- Provide the payment address to the customer on checkout, and in confirmation email.
+- Enable customization of bitcoin account name.
+- Provide the payment address to the customer in confirmation email.
+- Configure total payment confirmations to consider payment complete.
 - Configurable timeout, after which unpaid orders are cancelled.
-- Checks for payment receipt and update status.
+- Check for payment receipt and update status.
 - Support for downloadable products.
 - Localization support, of course.
 
 
-Known Issues
----------------------------
-
-- Magento's rate importer is designed for a single rate import. Adding multiple rate imports causes rate errors on the
-  existing imports, as they don't have Bitcoins as currency. There's no elegant way to ignore BIT rates when unsupported.
 
 License
 ---------------------------
