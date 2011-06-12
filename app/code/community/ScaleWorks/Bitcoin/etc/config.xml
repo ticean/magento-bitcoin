@@ -28,7 +28,7 @@
 <config>
     <modules>
         <ScaleWorks_Bitcoin>
-            <version>0.0.1</version>
+            <version>0.1.0</version>
         </ScaleWorks_Bitcoin>
     </modules>
     <global>
@@ -63,6 +63,14 @@
                 </services>
             </import>
         </currency>
+        <fieldsets>
+            <sales_convert_quote_payment>
+                <bitcoin_payment_address><to_order_payment>*</to_order_payment></bitcoin_payment_address>
+            </sales_convert_quote_payment>
+            <sales_convert_order_payment>
+                <bitcoin_payment_address><to_quote_payment>*</to_quote_payment></bitcoin_payment_address>
+            </sales_convert_order_payment>
+        </fieldsets>
     </global>
 
     <adminhtml>

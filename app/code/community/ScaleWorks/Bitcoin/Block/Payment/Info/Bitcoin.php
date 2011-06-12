@@ -28,9 +28,6 @@
 class ScaleWorks_Bitcoin_Block_Payment_Info_Bitcoin extends Mage_Payment_Block_Info
 {
 
-    protected $_payToAddress;
-
-
     protected function _construct()
     {
         parent::_construct();
@@ -44,7 +41,7 @@ class ScaleWorks_Bitcoin_Block_Payment_Info_Bitcoin extends Mage_Payment_Block_I
      */
     public function getBitcoinPaymentAddress()
     {
-        return 'Booyah.';
+        return $this->getInfo()->getBitcoinPaymentAddress();
     }
 
 }

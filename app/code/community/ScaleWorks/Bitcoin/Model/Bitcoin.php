@@ -65,7 +65,7 @@ class ScaleWorks_Bitcoin_Model_Bitcoin extends Varien_Object
      * @return string Bitcoin address
      * @throws ScaleWorks_Bitcoin_Exception
      */
-    public function getNewAddress($account = NULL) {
+    public function getNewAddress($account = null) {
       if (!$account || empty($account)) {
         return $this->getClient()->getnewaddress();
       }
@@ -90,5 +90,24 @@ class ScaleWorks_Bitcoin_Model_Bitcoin extends Varien_Object
         }
         return $this->getClient()->getreceivedbyaddress($address, $minconf);
     }
+
+    /**
+     * Assigns an address to an account.
+     * $account may be omitted to remove an account from an address.
+     *
+     * @param string $address
+     * @param string $account
+     * @return NULL
+     * @throws BitcoinClientException
+     * @since 0.3.17
+     */
+    public function setAccount($address, $account = "") {
+      if (!$address || empty($address)) {
+        Mage::exception('ScaleWorks_Bitcoin', "Address is required to setAccount.");
+      }
+
+      return $this->getClient()->setaccount($address, $account);
+    }
+
 
 }

@@ -36,19 +36,17 @@ class ScaleWorks_Bitcoin_Model_Payment_Method_Bitcoin extends Mage_Payment_Model
 
     /**
      * Payment code name
-     *
      * @var string
      */
     protected $_code = 'bitcoin';
     protected $_formBlockType = 'bitcoin/payment_form_bitcoin';
     protected $_infoBlockType = 'bitcoin/payment_info_bitcoin';
     protected $_bitcoin;
+    protected $_canUseCheckout = true;
 
-    public function prepareSave() {
-        $paymentAddress = $this->getBitcoinInstance()->getNewAddress();
-        $this->setBitcoinPaymentAddress($paymentAddress);
-        $this->getInfoInstance()->setBitcoinPaymentAddress($paymentAddress);
-        return $this;
+    public function __construct() {
+        $called = true;
+        parent::__construct();
     }
 
     public function getBitcoinInstance() {
@@ -66,11 +64,24 @@ class ScaleWorks_Bitcoin_Model_Payment_Method_Bitcoin extends Mage_Payment_Model
      */
     public function assignData($data)
     {
-        if (!($data instanceof Varien_Object)) {
-            $data = new Varien_Object($data);
+        $infoInstance = $this->getInfoInstance();
+
+        if (is_array($data)) {
+            $infoInstance->addData($data);
+        }
+        elseif ($data instanceof Varien_Object) {
+            $infoInstance->addData($data->getData());
         }
 
-        $this->getInfoInstance()->setBitcoinPaymentAddress($data->getBitcoinPaymentAddress());
+        // TODO: Configurable format for bitcoin $account.
+        $account = null;
+        if($customer = Mage::helper('customer')->getCurrentCustomer()) {
+            $account = $customer->getEmail();
+        }
+        if(!$this->getInfoInstance()->getBitcoinPaymentAddress()) {
+            $this->getInfoInstance()->setBitcoinPaymentAddress($this->getBitcoinInstance()->getNewAddress($account));
+        }
+
         return $this;
     }
 
@@ -95,6 +106,7 @@ class ScaleWorks_Bitcoin_Model_Payment_Method_Bitcoin extends Mage_Payment_Model
      */
     public function canUseForCurrency($currencyCode)
     {
-        return ($currencyCode == 'BIT')? true:false;
+        return true;
+        //return ($currencyCode == 'BTC')? true:false;
     }
 }

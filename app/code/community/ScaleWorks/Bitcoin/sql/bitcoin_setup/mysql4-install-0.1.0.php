@@ -20,28 +20,31 @@
  *
  * @category    ScaleWorks
  * @package     ScaleWorks_Bitcoin
- * @copyright   Copyright (c) 2011 ScaleWorks (http://www.scaleworks.co)
+ * @copyright   Copyright (c) 2011 ScaleWorks, Ticean Bennett. (http://www.scaleworks.co)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-/**
- * Overrides core Webservicex to add a public convert interface. When Bitcoincharts is enable this is used as
- * backup for unsupported currencies.
- *
- * @category   Mage
- * @package    Mage_Directory
- * @author      Magento Core Team <core@magentocommerce.com>
- */
-class ScaleWorks_Bitcoin_Model_Currency_Import_Webservicex extends Mage_Directory_Model_Currency_Import_Webservicex
-{
-    /**
-     * A public interface for converting currency.
-     * @param  $currencyFrom
-     * @param  $currencyTo
-     * @param int $retry
-     * @return void
-     */
-    public function convert($currencyFrom, $currencyTo, $retry=0) {
-        $this->_convert($currencyFrom, $currencyTo, $retry);
-    }
-}
+
+$installer = $this;
+$installer->startSetup();
+
+// Currency.
+//$installer->run("
+//INSERT INTO {$this->getTable('directory_currency_rate')} (`currency_from`, `currency_to`, `rate`) VALUES ('BTC', 'BTC', 1.000000000000),('BTC', 'EUR', 1.000000000000),('BTC', 'USD', 1.415000000000),('USD', 'BTC', 0.706700000000),('EUR', 'BTC', 1.000000000000);
+//");
+
+
+// Quote & Order
+$installer->run("
+ALTER TABLE `{$this->getTable('sales_flat_quote_payment')}`
+   ADD COLUMN `bitcoin_payment_address` varchar(255) NULL
+   AFTER `method`;
+");
+
+$installer->run("
+ALTER TABLE `{$this->getTable('sales_flat_order_payment')}`
+   ADD COLUMN `bitcoin_payment_address` varchar(255) NULL
+   AFTER `method`;
+");
+
+$installer->endSetup();
