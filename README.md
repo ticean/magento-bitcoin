@@ -57,6 +57,16 @@ Some things you should do upon installation...
 - If you've customized your order confirmation page, you might want to revisit. The same applies to transactional emails.
 
 
+
+Feedback & Contributing
+---------------------------
+All feedback is welcome. I'm especially looking forward to feedback from Magento store owners. If you have a feature you'd
+like to see implemented please let me know.
+
+Developers, please feel free to comment and contribute. I'll gladly pull reasonable changes and you will be credited.
+
+
+
 Licensing
 ---------------------------
 
