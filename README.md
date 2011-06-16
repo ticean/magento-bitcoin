@@ -1,4 +1,4 @@
-Bitcoin. For Magento
+Bitcoin. For Magento.
 ==================================
 This is a Bitcoin payment module for Magento.
 
