@@ -1,7 +1,6 @@
-ScaleWorks_Bitcoin
-===============================
-
-A Bitcoin payment module for Magento.
+Bitcoin. For Magento
+==================================
+This is a Bitcoin payment module for Magento.
 
 I wrote this module to help promote Bitcoin and to enable vendors to trade goods for bitcoin. While I believe this module
 is the most fully featured Magento Bitcoin module available at the moment, please consider this an alpha release.
@@ -21,7 +20,7 @@ to my wife and daughter, and child soon to be! :)
 
 
 
-Features
+Current Features
 ---------------------------
 
 - New bitcoin currency and symbol. Full currency support in Magento.
