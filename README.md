@@ -39,10 +39,12 @@ Planned Features
 ---------------------------
 
 - Assign payment addresses to customer bitcoin accounts.
+- Improve checkout flow (with suggestions from store owners).
 - More Payment information in Admin order view. (Confirmation counts, etc...)
 - Identify orders that have not been paid within a configurable time threshold.
 - Improved localization.
 - Reports and merchant tools.
+- Add "We Accept Bitcoin" and "Pay With Bitcoin" logos.
 - Hell of a lot more...
 
 
