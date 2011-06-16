@@ -42,6 +42,11 @@
                     <currency_import_webservicex>ScaleWorks_Bitcoin_Model_Currency_Import_Webservicex</currency_import_webservicex>
                 </rewrite>
             </directory>
+            <sales_mysql4>
+                <rewrite>
+                    <order_collection>ScaleWorks_Bitcoin_Model_Mysql4_Sales_Order_Collection</order_collection>
+                </rewrite>
+            </sales_mysql4>
         </models>
         <helpers>
             <bitcoin><class>ScaleWorks_Bitcoin_Helper</class></bitcoin>
@@ -90,16 +95,6 @@
                 </args>
             </adminhtml>
         </routers>
-        <events>
-            <checkout_submit_all_after>
-                <observers>
-                    <directpost_update_all_edit_increments>
-                        <class>authorizenet/directpost_observer</class>
-                        <method>updateAllEditIncrements</method>
-                    </directpost_update_all_edit_increments>
-                </observers>
-            </checkout_submit_all_after>
-        </events>
         <!--
         <translate>
             <modules>
@@ -139,26 +134,6 @@
                 </bitcoin>
             </updates>
         </layout>
-        <!--
-        <events>
-            <checkout_submit_all_after>
-                <observers>
-                    <directpost_save_order_after_submit>
-                        <class>authorizenet/directpost_observer</class>
-                        <method>saveOrderAfterSubmit</method>
-                    </directpost_save_order_after_submit>
-                </observers>
-            </checkout_submit_all_after>
-            <controller_action_postdispatch_checkout_onepage_saveOrder>
-                <observers>
-                    <directpost_save_order_onepage>
-                        <class>authorizenet/directpost_observer</class>
-                        <method>addAdditionalFieldsToResponseFrontend</method>
-                    </directpost_save_order_onepage>
-                </observers>
-            </controller_action_postdispatch_checkout_onepage_saveOrder>
-        </events>
-        -->
     </frontend>
 
     <admin>
@@ -204,6 +179,7 @@
                 <bitcoind_username></bitcoind_username>
                 <bitcoind_password></bitcoind_password>
                 <minimum_confirmations>6</minimum_confirmations>
+                <expire_after_days>14</expire_after_days>
                 <debug>0</debug>
                 <order_status>pending</order_status>
                 <create_order_before>1</create_order_before>
@@ -212,7 +188,6 @@
         </payment>
     </default>
 
-    <!--
     <crontab>
         <jobs>
             <bitcoin_fetch_confirmations>
@@ -220,6 +195,5 @@
             </bitcoin_fetch_confirmations>
         </jobs>
     </crontab>
-    -->
     
 </config>

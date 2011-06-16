@@ -24,6 +24,7 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
+
 class ScaleWorks_Bitcoin_IndexController extends Mage_Core_Controller_Front_Action
 {
     /**
@@ -38,6 +39,11 @@ class ScaleWorks_Bitcoin_IndexController extends Mage_Core_Controller_Front_Acti
 
         echo "Getting new address:<br/>";
         echo $bitcoin->getNewAddress('customer1290');
+    }
+
+    public function observerAction() {
+        $observer = new ScaleWorks_Bitcoin_Model_Observer();
+        $observer->fetchConfirmations();
     }
 
 }

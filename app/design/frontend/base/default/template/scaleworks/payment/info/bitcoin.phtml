@@ -26,7 +26,7 @@
 ?>
 <p><?php echo $this->getMethod()->getTitle() ?></p>
 <?php if($this->getBitcoinPaymentAddress()): ?>
-    You have opted to pay with Bitcoin.  Please send payment to this address:
+    You have opted to pay with Bitcoin.  Please send payment to:
         
     <p><strong><?php echo $this->__('Send Bitcoin payment to:') ?></strong> <?php echo $this->htmlEscape($this->getBitcoinPaymentAddress()) ?></p>
 <?php endif; ?>

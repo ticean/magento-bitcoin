@@ -73,13 +73,9 @@ class ScaleWorks_Bitcoin_Model_Payment_Method_Bitcoin extends Mage_Payment_Model
             $infoInstance->addData($data->getData());
         }
 
-        // TODO: Configurable format for bitcoin $account.
-        $account = null;
-        if($customer = Mage::helper('customer')->getCurrentCustomer()) {
-            $account = $customer->getEmail();
-        }
-        if(!$this->getInfoInstance()->getBitcoinPaymentAddress()) {
-            $this->getInfoInstance()->setBitcoinPaymentAddress($this->getBitcoinInstance()->getNewAddress($account));
+
+        if(!$infoInstance->getBitcoinPaymentAddress()) {
+            $infoInstance->setBitcoinPaymentAddress($this->getBitcoinInstance()->getNewAddress());
         }
 
         return $this;

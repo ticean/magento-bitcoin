@@ -4,8 +4,9 @@
 class ScaleWorks_Bitcoin_Model_Bitcoin extends Varien_Object
 {
     private $_client;
-    protected $_debug = false;
     protected $_store;
+
+    const PAYMENT_BITCOIN_DEBUG = 'payment/bitcoin/debug';
 
     protected function getServiceUrl() {
         $protocol = Mage::getStoreConfig('payment/bitcoin/bitcoind_https', $this->getStore())? 'https':'http';
@@ -34,7 +35,7 @@ class ScaleWorks_Bitcoin_Model_Bitcoin extends Varien_Object
     }
 
     public function getDebug() {
-        return $this->_debug;
+        $return Mage::getStoreConfig(self::PAYMENT_BITCOIN_DEBUG);
     }
 
     public function getInfo() {
