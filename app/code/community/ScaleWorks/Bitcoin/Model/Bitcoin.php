@@ -64,7 +64,7 @@ class ScaleWorks_Bitcoin_Model_Bitcoin extends Varien_Object
     }
 
     public function getDebug() {
-        $return Mage::getStoreConfig(self::PAYMENT_BITCOIN_DEBUG);
+        return Mage::getStoreConfig(self::PAYMENT_BITCOIN_DEBUG);
     }
 
     public function getInfo() {
