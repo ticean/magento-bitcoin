@@ -32,6 +32,7 @@ Current Features
 - Http/Https access to bitcoin (if bitcoind configured for https).
 - Generates a new bitcoin address for every order.
 - Provides bitcoin payment address to the customer on checkout.
+- Configurable setting to display a converted grand total on checkout. (Ex: Display grand total in USD.)
 
 
 Planned Features
@@ -52,7 +53,7 @@ Some things you should do upon installation...
 -----------------------------------------------------
 
 - Magento doesn't provide a good way to override locales, so you will need to manually copy the locale files in /lib/Zend/Locale/Data
-- Feel free to call me a lazy American bastard. As of now the only the EN modification is modified. You may need to localize.
+- Call me a lazy American bastard. As of now, only the EN Locale is modified. Submitted locales will be incorporated.
 - If you've customized your order confirmation page, you might want to revisit. The same applies to transactional emails.
 
 
