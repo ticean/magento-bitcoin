@@ -21,4 +21,11 @@
 -->
 <layout version="0.1.0">
 
+    <checkout_onepage_review>
+        <reference name="checkout.onepage.review.info.items.after">
+            <block type="bitcoin/checkout_onepage_review_payment" name="bitcoin.checkout.onepage.review.info.payment" as="payment"
+                   template="scaleworks/checkout/onepage/review/payment.phtml"/>
+        </reference>
+    </checkout_onepage_review>
+
 </layout>

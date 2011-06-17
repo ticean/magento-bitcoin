@@ -17,11 +17,17 @@
  * @copyright   Copyright (c) 2011 Ticean Bennett (http://www.scaleworks.co)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
+
+/**
+ * @see ScaleWorks_Bitcoin_Block_Checkout_Onepage_Review_Payment
  */
 ?>
-<p><?php echo $this->getMethod()->getTitle() ?></p>
 <?php if($this->getBitcoinPaymentAddress()): ?>
-    You have opted to pay with Bitcoin.  Please send payment to:
-        
+    <p>Thank you for using Bitcoin!</p>
+
+    <p>Please be sure to submit payment to the provided address.</p>
+
+    <!--
     <p><strong><?php echo $this->__('Send Bitcoin payment to:') ?></strong> <?php echo $this->htmlEscape($this->getBitcoinPaymentAddress()) ?></p>
+    -->
 <?php endif; ?>

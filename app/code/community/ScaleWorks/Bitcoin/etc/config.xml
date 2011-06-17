@@ -28,6 +28,11 @@
     <global>
         <blocks>
             <bitcoin><class>ScaleWorks_Bitcoin_Block</class></bitcoin>
+            <checkout>
+                <rewrite>
+                    <cart_totals>ScaleWorks_Bitcoin_Block_Checkout_Cart_Totals</cart_totals>
+                </rewrite>
+            </checkout>
         </blocks>
         <models>
             <bitcoin><class>ScaleWorks_Bitcoin_Model</class></bitcoin>
@@ -172,11 +177,10 @@
                 <bitcoind_port>8332</bitcoind_port>
                 <bitcoind_username></bitcoind_username>
                 <bitcoind_password></bitcoind_password>
-                <minimum_confirmations>6</minimum_confirmations>
+                <minimum_confirmations>5</minimum_confirmations>
                 <expire_after_days>14</expire_after_days>
                 <debug>0</debug>
                 <order_status>pending</order_status>
-                <create_order_before>1</create_order_before>
                 <group>offline</group>
             </bitcoin>
         </payment>
