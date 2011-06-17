@@ -20,5 +20,15 @@
 
 class ScaleWorks_Bitcoin_Helper_Data extends Mage_Core_Helper_Abstract
 {
+    const XML_PATH_PAYMENT_BITCOIN_DISPLAY_BASE_CONVERSION = 'payment/bitcoin/display_base_conversion';
 
+    /**
+     * Gets configuration setting for whether or not a converted grand total should be displayed on checkout.
+     * For now this isn't used. The converted grand total is not displayed for Bitcoin.
+     * @return void
+     */
+    public function getDisplayBaseConversion() {
+        //return Mage::getStoreConfigFlag(self::XML_PATH_PAYMENT_BITCOIN_DISPLAY_BASE_CONVERSION);
+        return false;
+    }
 }
