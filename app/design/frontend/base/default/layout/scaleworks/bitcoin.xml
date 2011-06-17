@@ -27,5 +27,12 @@
                    template="scaleworks/checkout/onepage/review/payment.phtml"/>
         </reference>
     </checkout_onepage_review>
+    
+    <checkout_onepage_success>
+        <reference name="content">
+            <remove name="checkout.success" />
+            <block type="bitcoin/checkout_onepage_success" name="checkout.success.bitcoin" template="scaleworks/checkout/success.phtml"/>
+        </reference>
+    </checkout_onepage_success>
 
 </layout>
