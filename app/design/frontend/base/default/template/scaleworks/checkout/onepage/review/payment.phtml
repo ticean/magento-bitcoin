@@ -19,15 +19,22 @@
  */
 
 /**
- * @see ScaleWorks_Bitcoin_Block_Payment_Form_Bitcoin
+ * @see ScaleWorks_Bitcoin_Block_Payment_Info_Bitcoin
  */
 ?>
-<ul class="form-list" id="payment_form_<?php echo $this->getMethodCode() ?>" style="display:none;">
-    <li>
-        <p>A unique Bitcoin payment address will be shown on the order confirmation.</p>
-
-        <p>Your order will shipped upon payment.</p>
-    </li>
-</ul>
-
-    
+<style>
+    div.payment-review {
+        text-align: right;
+        padding: 20px 5px;
+        border: 1px solid #D9DDE3;
+        border-width: 0 1px;
+    }
+    p.payment-address {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+</style>
+<div class="payment-review">
+    <p>Please send Bitcoin payment to:</p>
+    <p class="payment-address"><?php echo $this->getBitcoinPaymentAddress(); ?></p>
+</div>
