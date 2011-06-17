@@ -1,6 +1,6 @@
 <?php
 /**
- * Magento
+ * ScaleWorks Bitcoin
  *
  * NOTICE OF LICENSE
  *
@@ -10,26 +10,21 @@
  * http://opensource.org/licenses/osl-3.0.php
  * If you did not receive a copy of the license and are unable to
  * obtain it through the world-wide-web, please send an email
- * to license@magentocommerce.com so we can send you a copy immediately.
+ * to license@scaleworks.co so we can send you a copy immediately.
  *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade Magento to newer
- * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magentocommerce.com for more information.
- *
- * @category    Mage
- * @package     Mage_Checkout
- * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
+ * @category    ScaleWorks
+ * @package     ScaleWorks_Bitcoin
+ * @copyright   Copyright (c) 2011 Ticean Bennett (http://www.scaleworks.co)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
+
 
 /**
  * One page checkout order review
  *
- * @category    Mage
- * @package     Mage_Checkout
- * @author      Magento Core Team <core@magentocommerce.com>
+ * @category    ScaleWorks
+ * @package     ScaleWorks_Bitcoin
+ * @author      Ticean Bennett <ticean@gmail.com>
  */
 class ScaleWorks_Bitcoin_Block_Checkout_Onepage_Review_Payment extends Mage_Sales_Block_Items_Abstract
 {
