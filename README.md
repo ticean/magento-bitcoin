@@ -38,23 +38,34 @@ Current Features
 Planned Features
 ---------------------------
 
+
+- Improve documentation.
 - Assign payment addresses to customer bitcoin accounts.
 - Improve checkout flow (with suggestions from store owners).
 - More Payment information in Admin order view. (Confirmation counts, etc...)
 - Identify orders that have not been paid within a configurable time threshold.
 - Improved localization.
 - Reports and merchant tools.
-- Add "We Accept Bitcoin" and "Pay With Bitcoin" logos.
+- Add "We Accept Bitcoin" and "Pay With Bitcoin" widgets.
 - Hell of a lot more...
 
 
 
-Some things you should do upon installation...
+Installation
 -----------------------------------------------------
+I plan to add better documentation to the Wiki. Please be sure to backup files and data before modifying your Magento instance.
 
-- Magento doesn't provide a good way to override locales, so you will need to manually copy the locale files in /lib/Zend/Locale/Data
-- Call me a lazy American bastard. As of now, only the EN Locale is modified. Submitted locales will be incorporated.
-- If you've customized your order confirmation page, you might want to revisit. The same applies to transactional emails.
+- Copy the files from this project into your Magento root.
+- Enable BTC currency for your store.
+- Go to Manage Currencies and import exchange rates.
+- Start Bitcoind.
+- Watch the hash money roll in.
+
+## Notes:
+
+- Magento doesn't provide a good way to override locales, so the core Zend locale files are overwritten.
+- You must use the EN locale. Call me a lazy American bastard if you'd like. As of now, only the EN locale is modified. I'm happy to pull new locales.
+- The module customizes the order confirmation page. You may need to integrate the changes if you've already customized that page.
 
 
 
@@ -73,4 +84,5 @@ Licensing
 Copyright 2011, Ticean Bennett
 
 This work is licensed under the Open Software License (OSL 3.0)
+
 http://opensource.org/licenses/osl-3.0.php
