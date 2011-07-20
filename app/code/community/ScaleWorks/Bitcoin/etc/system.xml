@@ -101,7 +101,6 @@
                         <bitcoind_validate translate="button_label">
                             <label></label>
                             <button_label>Validate Configuration</button_label>
-                            <button_url><![CDATA[https://www.paypal.com/us/cgi-bin/webscr?cmd=_login-api-run]]></button_url>
                             <frontend_model>bitcoin/adminhtml_system_config_validator</frontend_model>
                             <sort_order>132</sort_order>
                             <show_in_default>1</show_in_default>
