@@ -27,6 +27,8 @@
  */
 class ScaleWorks_Bitcoin_Block_Adminhtml_System_Config_Validator extends Mage_Adminhtml_Block_System_Config_Form_Field
 {
+    const VALIDATOR_URL = "bitcoin/admin/validator/";
+    
     /**
      * Set template to itself
      */
@@ -60,9 +62,10 @@ class ScaleWorks_Bitcoin_Block_Adminhtml_System_Config_Validator extends Mage_Ad
     protected function _getElementHtml(Varien_Data_Form_Element_Abstract $element)
     {
         $originalData = $element->getOriginalData();
+        $url = Mage::helper("adminhtml")->getUrl("bitcoin/admin/validator/");
         $this->addData(array(
             'button_label' => Mage::helper('bitcoin')->__($originalData['button_label']),
-            'button_url'   => $originalData['button_url'],
+            'button_url'   => $url,
             'html_id' => $element->getHtmlId(),
         ));
         return $this->_toHtml();
