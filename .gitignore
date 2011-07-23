@@ -4,6 +4,7 @@ app/code/community/Find/Feed/
 app/code/community/Phoenix/
 app/code/core/
 app/design/adminhtml/default/default/
+app/design/adminhtml/default/find/
 app/design/frontend/base/
 app/design/frontend/default/default/
 app/design/frontend/default/blank/

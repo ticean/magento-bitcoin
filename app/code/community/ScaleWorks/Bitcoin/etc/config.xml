@@ -22,7 +22,7 @@
 <config>
     <modules>
         <ScaleWorks_Bitcoin>
-            <version>0.1.0</version>
+            <version>0.1.1</version>
         </ScaleWorks_Bitcoin>
     </modules>
     <global>
@@ -85,27 +85,19 @@
                 </bitcoin>
             </updates>
         </layout>
-        <routers>
-            <adminhtml>
-                <args>
-                    <modules>
-                        <ScaleWorks_Bitcoin before="Mage_Adminhtml">ScaleWorks_Bitcoin_Adminhtml</ScaleWorks_Bitcoin>
-                    </modules>
-                </args>
-            </adminhtml>
-        </routers>
-        <!--
-        <translate>
-            <modules>
-                <ScaleWorks_Bitcoin>
-                    <files>
-                        <default>ScaleWorks_Bitcoin.csv</default>
-                    </files>
-                </ScaleWorks_Bitcoin>
-            </modules>
-        </translate>
-        -->
     </adminhtml>
+    
+    <admin>
+         <routers>
+            <bitcoin>
+                <use>admin</use>
+                <args>
+                    <module>ScaleWorks_Bitcoin</module>
+                    <frontName>bitcoin</frontName>
+                </args>
+            </bitcoin>
+        </routers>
+    </admin>
 
     <frontend>
         <translate>
@@ -117,15 +109,7 @@
                 </ScaleWorks_Bitcoin>
             </modules>
         </translate>
-         <routers>
-            <bitcoin>
-                <use>standard</use>
-                <args>
-                    <module>ScaleWorks_Bitcoin</module>
-                    <frontName>bitcoin</frontName>
-                </args>
-            </bitcoin>
-        </routers>
+
         <layout>
             <updates>
                 <bitcoin>
@@ -134,18 +118,6 @@
             </updates>
         </layout>
     </frontend>
-
-    <admin>
-        <routers>
-            <adminhtml>
-                <args>
-                    <modules>
-                        <ScaleWorks_Bitcoin before="Mage_Adminhtml">ScaleWorks_Bitcoin_Adminhtml</ScaleWorks_Bitcoin>
-                    </modules>
-                </args>
-            </adminhtml>
-        </routers>
-    </admin>
 
     <default>
         <system>
