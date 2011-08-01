@@ -23,11 +23,11 @@
  */
 ?>
 <?php if($this->getBitcoinPaymentAddress()): ?>
-    <p>Thank you for using Bitcoin!</p>
+    <p><?php echo $this->__('Thank you for using Bitcoin!') ?></p>
 
-    <p>Please be sure to submit payment to the provided address.</p>
+    <p><?php echo $this->__('Please be sure to submit payment to the provided address.') ?></p>
 
     <!--
-    <p><strong><?php echo $this->__('Send Bitcoin payment to:') ?></strong> <?php echo $this->htmlEscape($this->getBitcoinPaymentAddress()) ?></p>
+    <p><strong><?php echo $this->__('Please send Bitcoin payment to:') ?></strong> <?php echo $this->htmlEscape($this->getBitcoinPaymentAddress()) ?></p>
     -->
 <?php endif; ?>

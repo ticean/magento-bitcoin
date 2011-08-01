@@ -20,10 +20,10 @@
 
  /** @see ScaleWorks_Bitcoin_Block_Adminhtml_Status */
 ?>
-<h1>Bitcoin Status</h1>
+<h1><?php echo $this->__('Bitcoin Status') ?></h1>
 <div>
     <?php if($this->getInfo()): ?>
-        <p class="success">Connected to bitcoin service.</p>
+        <p class="success"><?php echo $this->__('Connected to bitcoin service.') ?></p>
         <table>
             <?php foreach($this->getInfo() as $key => $value): ?>
                 <tr>
@@ -32,6 +32,6 @@
             <?php endforeach; ?>
         </table>
     <?php else: ?>
-        <p class="error">Could not connect to Bitcoin service.</p>
+        <p class="error"><?php echo $this->__('Could not connect to bitcoin service.') ?></p>
     <?php endif; ?>
 </div>
