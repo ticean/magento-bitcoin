@@ -14,9 +14,9 @@ I'm looking forward to feedback from vendors who are accepting Bitcoin.
 DONATIONS
 ---------------------------
 If you find this module useful please consider donating an appropriate amount. It helps me justify the time spent coding
-to my wife and daughter, and child soon to be! :)
+to my wife and two daughters! :)
 
-1CvWfZXUCFowsQb6otfey16FrgVFPZNHrg
+12rJSmj7Ny5LzDGkgfauC2T8TZuwNZ3xaC
 
 
 
